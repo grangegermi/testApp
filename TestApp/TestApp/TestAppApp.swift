@@ -10,10 +10,13 @@ import SwiftData
 
 @main
 struct TestAppApp: App {
+    @StateObject private var themeServise = ThemeServise()
     
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .environmentObject(themeServise)
+                .preferredColorScheme(themeServise.currentTheme.colorScheme)
                 .modelContainer(for: [FavoriteProduct.self, CartProduct.self])
         }
     }

@@ -48,7 +48,7 @@ struct MainTabView: View {
             .tag(3)
 
             NavigationStack {
-//                SettingsView()
+                SettingsView()
             }
             .tabItem {
                 Label("Settings", systemImage: "gearshape.fill")
