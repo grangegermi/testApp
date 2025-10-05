@@ -27,21 +27,25 @@ struct Favorites: View {
         NavigationStack{
             ZStack{
                 Color.appBackround.ignoresSafeArea()
-                List(searchFavorites) { favorite in
-                    Text(favorite.title)
-                        .listRowBackground(Color.appBackround)
-                        .swipeActions {
-                            Button("Delete", role: .destructive) {
-                                dataService.deleteFavorite(product: favorite, context: modelContext)
+                if searchFavorites.isEmpty {
+                    Text("No favorites yet")
+                    
+                } else {
+                    List(searchFavorites) { favorite in
+                        Text(favorite.title)
+                            .listRowBackground(Color.appBackround)
+                            .swipeActions {
+                                Button("Delete", role: .destructive) {
+                                    dataService.deleteFavorite(product: favorite, context: modelContext)
+                                }
                             }
-                        }
+                    }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
             }
             .searchable(text: $searchText)
             .navigationTitle("Favorites")
         }
-        
     }
 }
 

@@ -14,7 +14,7 @@ struct TestAppApp: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
-                .modelContainer(for: FavoriteProduct.self)
+                .modelContainer(for: [FavoriteProduct.self, CartProduct.self])
         }
     }
 }

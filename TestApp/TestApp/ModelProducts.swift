@@ -10,7 +10,7 @@ import Foundation
 struct ModelProducts: Codable, Hashable {
     let id: Int
     let title: String
-    let price: Float
+    let price: Double
     let description: String
     let image: String
     let category: String

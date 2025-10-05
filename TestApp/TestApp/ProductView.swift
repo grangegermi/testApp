@@ -41,7 +41,7 @@ struct ProductView: View {
                 .padding(.bottom, 20)
                 HStack(spacing: 10) {
                     Button {
-                        
+                        dataService.addToCart(product: product, context: modelContext)
                     } label: {
                         Image(systemName:"trash")
                             .tint(Color.black)

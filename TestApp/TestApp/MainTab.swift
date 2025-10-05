@@ -31,6 +31,21 @@ struct MainTabView: View {
             }
             .tag(1)
             
+            NavigationStack {
+                TrashView()
+            }
+            .tabItem {
+                Label("Cart", systemImage: "trash.fill")
+            }
+            .tag(2)
+            
+            NavigationStack {
+             
+            }
+            .tabItem {
+                Label("Google", systemImage: "network")
+            }
+            .tag(3)
 
             NavigationStack {
 //                SettingsView()
@@ -38,7 +53,7 @@ struct MainTabView: View {
             .tabItem {
                 Label("Settings", systemImage: "gearshape.fill")
             }
-            .tag(2)
+            .tag(4)
         }
         .accentColor(.black)
     }

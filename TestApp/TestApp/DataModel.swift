@@ -24,3 +24,19 @@ class FavoriteProduct {
         self.image = image
     }
 }
+
+//MARK: - CartProduct
+@Model
+class CartProduct {
+    @Attribute(.unique) var idCart: Int
+    var title: String
+    var price: Double
+    var quantity: Int
+    
+    init(idCart: Int, title: String, price: Double, quantity: Int = 1) {
+        self.idCart = idCart
+        self.title = title
+        self.price = price
+        self.quantity = quantity
+    }
+}
