@@ -13,7 +13,6 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            
             NavigationStack {
                 ContentView()
             }
@@ -21,8 +20,6 @@ struct MainTabView: View {
                 Label("Home", systemImage: "house.fill")
             }
             .tag(0)
-            
-            
             NavigationStack {
                  Favorites()
             }
@@ -30,7 +27,6 @@ struct MainTabView: View {
                 Label("Favorites", systemImage: "heart.fill")
             }
             .tag(1)
-            
             NavigationStack {
                 TrashView()
             }
@@ -40,13 +36,12 @@ struct MainTabView: View {
             .tag(2)
             
             NavigationStack {
-             
+                Google(selectedTab: $selectedTab)
             }
             .tabItem {
                 Label("Google", systemImage: "network")
             }
             .tag(3)
-
             NavigationStack {
                 SettingsView()
             }
